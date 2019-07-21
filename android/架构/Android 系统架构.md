@@ -1,11 +1,22 @@
-## 简述 Android 的系统架构
+## 目录
 
+* [简述 Android 的系统架构](简述_Android_的系统架构)
+  * [架构图](架构图)
+  * [Linux 内核](Linux_内核)
+  * [硬件抽象层](硬件抽象层)
+  * [Android Runtime](Android_Runtime)
+  * [原生 C/C++ 库](原生_C/C++_库)
+  * [Java API 框架](Java_API_框架)
+  * [系统应用](系统应用)
+ 
+
+## 简述 Android 的系统架构
 
 Android 系统采用**基于 Linux 的分层架构**.
 
-### 图
+### 架构图
 
-![Android 系统架构](你刚复制的图片路径)
+![Android 系统架构](https://github.com/nasduck/ProgrammerLife/blob/master/android/%E6%9E%B6%E6%9E%84/img/android-system-arch.png)
 
 从下往上说:
 
@@ -37,7 +48,7 @@ Android 还包含一套核心运行时库, 可提供 Java API 框架使用的 Ja
 
 如果开发的是需要 C 或 C++ 代码的应用, 可以使用 Android NDK 直接从原生代码访问某些原生平台库.
 
-#### Java API 框架 
+#### Java API 框架
 
 提供应用程序构建时用到的各种 API. 如视图(View), Content Provider, 以及各种管理器, 比如活动管理器, 通知管理器等.
 
