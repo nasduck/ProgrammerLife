@@ -58,22 +58,22 @@ Activity在onResume()方法和onPause()方法之间所经历的周期。活动�
 回调顺序：onRestart -> onStart -> onResume
 
 #### Activity A跳转到Activity B：
-当Activity B是一个正常的Activity时：
-回调顺序：A_onPause -> B_onCreate -> B_onStart -> B_onResume -> A_onStop
-当Activity B是一个对话框形式或者透明的Activity形式的Activity时：
-回调顺序：A_onPause -> B_onCreate -> B_onStart -> B_onResume
+当Activity B是一个正常的Activity时：     
+回调顺序：A_onPause -> B_onCreate -> B_onStart -> B_onResume -> A_onStop     
+当Activity B是一个对话框形式或者透明的Activity形式的Activity时：    
+回调顺序：A_onPause -> B_onCreate -> B_onStart -> B_onResume     
 
 #### Activity B返回到Activity A：
-当Activity B是一个正常的Activity时：
-回调顺序：B_onPause -> A_onRestart -> A_onStart  -> A_onResume -> B_onStop -> B_onDestroy
-当Activity B是一个对话框形式或者透明的Activity形式的Activity时：
-回调顺序：B_onPause -> A_onResume -> B_onStop -> B_onDestroy
+当Activity B是一个正常的Activity时：    
+回调顺序：B_onPause -> A_onRestart -> A_onStart  -> A_onResume -> B_onStop -> B_onDestroy     
+当Activity B是一个对话框形式或者透明的Activity形式的Activity时：     
+回调顺序：B_onPause -> A_onResume -> B_onStop -> B_onDestroy     
 
 #### 横屏切换到竖屏的时候：
-未设置android:configChanges时：但会调用onSaveInstanceState和onRestoreInstanceState来做数据暂存
-回调顺序：onPause -> onSaveInstanceState -> onStop -> onDestroy -> onCreate -> onStart -> onRestoreInstanceState -> onResume
-设置android:configChanges时：
-activity不会被销毁，会调用onConfigurationChanged
+未设置android:configChanges时：但会调用onSaveInstanceState和onRestoreInstanceState来做数据暂存     
+回调顺序：onPause -> onSaveInstanceState -> onStop -> onDestroy -> onCreate -> onStart -> onRestoreInstanceState -> onResume     
+设置android:configChanges时：     
+activity不会被销毁，会调用onConfigurationChanged     
 
 #### 对话框出现在前台：
 回调顺序：onPause （这个是不对的，在创建对话框的时候传入了对应activity的context）
